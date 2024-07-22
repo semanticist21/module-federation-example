@@ -1,0 +1,17 @@
+{
+  "name": "module-federation-example3",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vite": "pnpm --filter remote dev & pnpm --filter remote2 dev & wait-on tcp:3000 & wait-on tcp:3002 && pnpm --filter host dev",
+    "build": "pnpm --filter remote build && pnpm --filter remote2 build && pnpm --filter host build",
+    "preview": "pnpm --filter remote preview & pnpm --filter remote2 preview & pnpm --filter host preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "wait-on": "^7.2.0"
+  }
+}
