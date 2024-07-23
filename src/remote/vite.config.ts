@@ -7,9 +7,10 @@ const moduleConfig = {
   name: "remote-app",
   filename: "remoteEntry.js",
   exposes: {
+    "./store1": "./src/store/store1",
     "./Button": "./src/Button",
   },
-  shared: ["react", "react-dom"],
+  shared: ["react", "react-dom", "zustand"],
 };
 
 // https://vitejs.dev/config/
