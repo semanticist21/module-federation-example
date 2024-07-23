@@ -15,6 +15,13 @@ function App() {
       const customEvent = e as CustomEvent<string>;
       navigate(customEvent.detail);
     });
+
+    return () => {
+      document.removeEventListener("route", (e: Event) => {
+        const customEvent = e as CustomEvent<string>;
+        navigate(customEvent.detail);
+      });
+    };
   }, [navigate]);
 
   return (
