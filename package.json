@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "vite": "pnpm --filter remote dev & pnpm --filter remote2 dev & wait-on tcp:3000 tcp:3001 && pnpm --filter host dev",
-    "vite-remote": "pnpm --filter host dev & pnpm --filter remote2 dev & wait-on tcp:3002 tcp:3001 && pnpm --filter remote dev",
+    "vite-remote": "pnpm --filter host dev & pnpm --filter remote2 dev & wait-on tcp:3001 tcp:3002 && pnpm --filter remote dev",
     "build": "pnpm --filter remote build && pnpm --filter remote2 build && pnpm --filter host build",
     "preview": "pnpm build && pnpm --filter remote preview & wait-on tcp:3000 && pnpm --filter remote2 preview & wait-on tcp:3000 tcp:3001 && pnpm --filter host preview && pnpm --filter host preview"
   },
