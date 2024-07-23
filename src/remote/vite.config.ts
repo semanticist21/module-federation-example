@@ -1,22 +1,31 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
-import { NativeFederationTypeScriptRemote } from "@module-federation/native-federation-typescript/vite";
+import {
+  NativeFederationTypeScriptHost,
+  NativeFederationTypeScriptRemote,
+} from "@module-federation/native-federation-typescript/vite";
 
 const moduleConfig = {
   name: "remote-app",
   filename: "remoteEntry.js",
-  exposes: {
-    "./store1": "./src/store/store1",
-    "./Button": "./src/Button",
+  remotes: {
+    hostApp: "http://localhost:3002/assets/remoteEntry.js",
   },
-  shared: ["react", "react-dom", "zustand"],
+  exposes: {
+    "./Button": "./src/Button",
+    "./Remote": "./src/pages/Remote",
+  },
+  shared: ["react", "react-dom"],
 };
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    NativeFederationTypeScriptHost({
+      moduleFederationConfig: moduleConfig,
+    }),
     NativeFederationTypeScriptRemote({
       moduleFederationConfig: moduleConfig,
     }),
