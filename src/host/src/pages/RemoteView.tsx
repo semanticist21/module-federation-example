@@ -1,5 +1,5 @@
 import { Fragment } from "react/jsx-runtime";
-import { Layout } from "./Layout";
+import { Header } from "./Header";
 import { lazy, Suspense } from "react";
 
 const Remote = lazy(() => import("remoteApp/Remote"));
@@ -7,7 +7,7 @@ const Remote = lazy(() => import("remoteApp/Remote"));
 export const RemoteView = () => {
   return (
     <Fragment>
-      <Layout />
+      <Header />
       <Suspense fallback={<div>Loading...</div>}>
         <Remote />
       </Suspense>

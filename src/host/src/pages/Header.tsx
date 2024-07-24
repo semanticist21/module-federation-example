@@ -4,17 +4,16 @@ import { useQuery } from "@tanstack/react-query";
 import { getMockDataAsync } from "../query/query";
 import { keyChain } from "@kkoms/query-key-chain";
 
-export const Layout = () => {
+export const Header = () => {
   const { count, increment, timestamp } = useIncrementStore();
 
-  const queryKey = keyChain("test").all();
   const { data, isFetching, refetch } = useQuery({
-    queryKey: queryKey,
+    queryKey: keyChain("test").all(),
     queryFn: getMockDataAsync,
   });
 
   return (
-    <div className="bg-green-700 flex items-center justify-between w-full top-0 fixed left-0 px-8">
+    <header className="bg-green-700 flex items-center justify-between w-full top-0 fixed left-0 px-8">
       <div className="flex items-center justify-center gap-4">
         <Link className="text-white" to="/">
           Home
@@ -55,7 +54,7 @@ export const Layout = () => {
           <time className="text-xs">{timestamp}</time>
         </div>
 
-        <p className={`text-sm rounded-md px-2 py-1 bg-gray-800`}>
+        <p className={`text-sm rounded-md px-2 py-1 bg-gray-800 text-white`}>
           <span>{count}</span>
         </p>
 
@@ -63,6 +62,6 @@ export const Layout = () => {
           Increase+
         </button>
       </div>
-    </div>
+    </header>
   );
 };

@@ -6,7 +6,7 @@ function Button() {
   return (
     <div>
       <button className="shared-btn" onClick={() => setCount(count + 1)}>
-        Click me: {count}
+        <span className="font-bold">Remote1 </span>Click me: {count}
       </button>
     </div>
   );

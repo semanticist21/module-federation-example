@@ -1,9 +1,6 @@
-import { QueryClient } from "@tanstack/react-query";
-
-const client = new QueryClient();
-
-export default client;
-
+/**
+ * @remarks for testing with different data from host
+ */
 export const getMockDataAsync = async () => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 

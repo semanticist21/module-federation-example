@@ -13,7 +13,7 @@ const moduleConfig = {
     hostApp: "http://localhost:3002/assets/remoteEntry.js",
   },
   exposes: {
-    "./Button": "./src/Button",
+    "./Button": "./src/components/Button",
     "./Remote": "./src/pages/Remote",
   },
   shared: ["react", "react-dom"],

@@ -7,7 +7,7 @@ const moduleConfig = {
   name: "remote-app2",
   filename: "remoteEntry.js",
   exposes: {
-    "./Button": "./src/Button",
+    "./Button": "./src/components/Button",
     "./Remote2": "./src/pages/Remote2",
   },
   shared: ["react", "react-dom"],

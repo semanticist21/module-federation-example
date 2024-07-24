@@ -1,11 +1,11 @@
 import { Fragment } from "react/jsx-runtime";
-import { Layout } from "./Layout";
+import { Header } from "./Header";
 import { Remote2 } from "remoteApp2/Remote2";
 
 export const RemoteView2 = () => {
   return (
     <Fragment>
-      <Layout />
+      <Header />
       <Remote2 />
     </Fragment>
   );
