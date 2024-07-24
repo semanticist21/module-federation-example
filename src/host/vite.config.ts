@@ -14,6 +14,7 @@ const moduleConfig: VitePluginFederationOptions = {
   },
   exposes: {
     "./Store": "./src/store/Store",
+    "./Query": "./src/query/query",
   },
   shared: ["react", "react-dom"],
 };

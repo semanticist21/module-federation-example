@@ -1,2 +1,2 @@
-export * from './compiled-types/Store';
-export { default } from './compiled-types/Store';
+export * from './compiled-types/store/Store';
+export { default } from './compiled-types/store/Store';
