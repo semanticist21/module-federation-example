@@ -1,19 +1,21 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useIncrementStore } from "hostApp/Store";
 import { getMockDataAsync } from "../query/query";
+import { keyChain } from "@kkoms/query-key-chain";
 
 const RemoteContent = () => {
-  const { count, increment } = useIncrementStore();
+  const { count, increment, timestamp } = useIncrementStore();
   const client = useQueryClient();
 
   const { data } = useQuery({
-    queryKey: ["test"],
+    queryKey: keyChain("test").all(),
     queryFn: getMockDataAsync,
   });
 
   return (
     <div className="bg-gray-500 size-full flex items-center justify-center flex-col gap-4">
       <h1 className="text-white">Remote</h1>
+      <time className="text-white">{timestamp}</time>
 
       <button
         onClick={() => {

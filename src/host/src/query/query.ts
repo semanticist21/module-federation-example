@@ -13,5 +13,5 @@ export default client;
 export const getMockDataAsync = async () => {
   await new Promise((resolve) => setTimeout(resolve, 3000));
 
-  return "successful";
+  return "Host Received";
 };

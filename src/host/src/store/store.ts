@@ -1,19 +1,13 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
 
 interface IncrementStore {
+  timestamp: number;
   count: number;
   increment: () => void;
 }
 
-export const useIncrementStore = create(
-  persist<IncrementStore>(
-    (set) => ({
-      count: 0,
-      increment: () => set((state) => ({ count: state.count + 1 })),
-    }),
-    {
-      name: "increment-store",
-    }
-  )
-);
+export const useIncrementStore = create<IncrementStore>((set) => ({
+  timestamp: Date.now(),
+  count: 0,
+  increment: () => set((state) => ({ count: state.count + 1 })),
+}));
