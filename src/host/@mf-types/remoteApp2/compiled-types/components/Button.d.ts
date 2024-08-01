@@ -1,2 +1,2 @@
-declare function Button22(): import("react").JSX.Element;
-export default Button22;
+declare function Button2(): import("react").JSX.Element;
+export default Button2;
